@@ -54,3 +54,18 @@ class Employee:
             'Net Deductions': round(NetDeduction, 2),
             'Net Pay': round(NetPay, 2)
         }
+
+def computeAllPayment(empFileName, HoursFileName):
+    finalResult = []
+    with open(empFileName, 'r') as fobj:
+        for line in fobj:
+            data = line.split()
+            emp = Employee(data[0], data[1], data[2], data[3],
+                           data[4], data[5], data[6], data[7])
+            with open(HoursFileName, 'r') as hobj:
+                for hline in hobj:
+                    hrs = hline.split()
+                    if(hrs[0] == emp.StaffId):
+                        pay = emp.computePayment(int(hrs[2]), hrs[1])
+                        finalResult.append(pay)
+    print(finalResult)
