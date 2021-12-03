@@ -34,3 +34,23 @@ class Employee:
 
         NetDeduction = TotalTax - self.TaxCredit
         NetPay = GrossPay - NetDeduction
+
+        return {
+            'name': self.FirstName+' ' + self.LastName,
+            'Date': date,
+            'Regular Hours Worked': self.RegHours,
+            'Overtime Hours Worked': OT,
+            'Regular Rate': self.HourlyRate,
+            'Overtime Rate': OTRate,
+            'Regular Pay': RegularPay,
+            'Overtime Pay': OTPay,
+            'Gross Pay': GrossPay,
+            'Standard Rate Pay': self.StandardBand,
+            'Higher Rate Pay': round(HigherPay, 2),
+            'Standard Tax': round(StdTax, 2),
+            'Higher Tax': round(HighTax, 2),
+            'Total Tax': TotalTax,
+            'Tax Credit': self.TaxCredit,
+            'Net Deductions': round(NetDeduction, 2),
+            'Net Pay': round(NetPay, 2)
+        }
