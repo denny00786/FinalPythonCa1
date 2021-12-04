@@ -1,3 +1,4 @@
+import unittest
 class Employee:
 
     def __init__(self, StaffId, LastName, FirstName, RegHours, HourlyRate, OTMultiple, TaxCredit, StandardBand):
@@ -69,3 +70,16 @@ def computeAllPayment(empFileName, HoursFileName):
                         pay = emp.computePayment(int(hrs[2]), hrs[1])
                         finalResult.append(pay)
     print(finalResult)
+
+
+def main():
+    computeAllPayment(r"data\employees.txt", r"data\hours.txt")
+
+
+class EmployeeTest(unittest.TestCase): #creating a Employeetest class for unit test
+    
+    #Creating three functions named testNetLessEqualGross,testNetLessEqualGrossa,testNetLessEqualGrossb for testing the net pay is less than equal to gross pay  
+    def testNetLessEqualGross(self):
+        e = Employee(123456, 'Green', 'Joe', 37, 16, 1.5, 70, 700) 
+        pi = e.computePayment(1,'31/10/2021')
+        self.assertLessEqual(pi['Net Pay'], pi['Gross Pay'])
