@@ -83,3 +83,7 @@ class EmployeeTest(unittest.TestCase): #creating a Employeetest class for unit t
         e = Employee(123456, 'Green', 'Joe', 37, 16, 1.5, 70, 700) 
         pi = e.computePayment(1,'31/10/2021')
         self.assertLessEqual(pi['Net Pay'], pi['Gross Pay'])
+    def testNetLessEqualGrossa(self):
+        e1 = Employee(1234458, 'Shane', 'John', 39, 12, 2.6, 50, 825) 
+        pi1= e1.computePayment(23,'12/11/2021')
+        self.assertLessEqual(pi1['Net Pay'], pi1['Gross Pay'])
