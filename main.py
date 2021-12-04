@@ -87,3 +87,11 @@ class EmployeeTest(unittest.TestCase): #creating a Employeetest class for unit t
         e1 = Employee(1234458, 'Shane', 'John', 39, 12, 2.6, 50, 825) 
         pi1= e1.computePayment(23,'12/11/2021')
         self.assertLessEqual(pi1['Net Pay'], pi1['Gross Pay'])
+    def testNetLessEqualGrossb(self):
+        e2 = Employee(923696, 'Landon', 'Steve', 39, 12, 0.5, 60, 955) 
+        pi2= e2.computePayment(48,'12/11/2021')
+        self.assertLessEqual(pi2['Net Pay'], pi2['Gross Pay'])
+    def testNetLessEqualGrossc(self):
+        e2 = Employee(007868, 'Denny', 'Davis', 40, 10, 2.00, 75, 600) 
+        pi2= e2.computePayment(20,'5/12/2021')
+        self.assertLessEqual(pi2['Net Pay'], pi2['Gross Pay'])
