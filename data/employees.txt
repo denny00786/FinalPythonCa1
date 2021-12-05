@@ -1,2 +1,2 @@
-007868 Denny Davis 40 10 2.00 75 600
-007869 Stephen Cury 30 10 1.00 80 700
+117868 Denny Davis 40 10 2.00 75 600
+117869 Stephen Cury 30 10 1.00 80 700
